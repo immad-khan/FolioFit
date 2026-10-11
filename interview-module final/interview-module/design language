@@ -1,0 +1,118 @@
+Here is the design system specification extracted directly from the HTML document's Tailwind configuration, Material Symbols setup, and custom styling rules.
+
+---
+
+## 1. Typography
+
+### Font Families
+
+* **Primary / Body / Display:** `'Hanken Grotesk', sans-serif`
+* **Code / Technical Labels:** `'JetBrains Mono', monospace`
+* **Icons:** `'Material Symbols Outlined'`
+
+### Standard Font Sizes & Hierarchy
+
+| Token | Font Size | Line Height | Letter Spacing | Font Weight |
+| --- | --- | --- | --- | --- |
+| **`display`** | `48px` | `56px` | `-0.03em` | `700` (Bold) |
+| **`metric-callout`** | `40px` | `44px` | `-0.03em` | `700` (Bold) |
+| **`headline-lg`** | `36px` | `44px` | `-0.025em` | `600` (Semi-bold) |
+| **`headline-lg-mobile`** | `28px` | `36px` | `-0.02em` | `600` (Semi-bold) |
+| **`headline-md`** | `24px` | `32px` | `-0.02em` | `600` (Semi-bold) |
+| **`headline-sm`** | `20px` | `28px` | `-0.015em` | `600` (Semi-bold) |
+| **`title-md`** | `16px` | `24px` | `-0.01em` | `600` (Semi-bold) |
+| **`body-lg`** | `16px` | `24px` | `0em` | `400` (Regular) |
+| **`body-md`** | `14px` | `20px` | `0em` | `400` (Regular) |
+| **`body-sm`** | `12px` | `16px` | `0.01em` | `400` (Regular) |
+| **`label-md`** | `13px` | `16px` | `-0.01em` | `500` (Medium) |
+| **`label-sm`** | `11px` | `14px` | `0.02em` | `500` (Medium) |
+
+---
+
+## 2. Color Palette (Material You Theme Tokens)
+
+### Backgrounds & Surfaces
+
+* **Page Background (`bg-background` / `bg-surface`):** `#eafdff` (Soft Cyan Light)
+* **Surface Bright (`bg-surface-bright`):** `#eafdff`
+* **Surface Dim (`bg-surface-dim`):** `#c2dfe3`
+* **Surface Container Lowest (`bg-surface-container-lowest`):** `#ffffff` (Pure White Card Background)
+* **Surface Container Low (`bg-surface-container-low`):** `#dcf9fd`
+* **Surface Container (`bg-surface-container`):** `#d6f3f7`
+* **Surface Container High (`bg-surface-container-high`):** `#d0eef1`
+* **Surface Container Highest (`bg-surface-container-highest`):** `#cbe8eb`
+
+### Primary Theme Colors (Teal / Cyan Accent)
+
+* **Primary (`bg-primary` / `text-primary`):** `#006b5e` (Dark Teal - Main Brand)
+* **On Primary (`text-on-primary`):** `#ffffff`
+* **Primary Container (`bg-primary-container`):** `#00a693` (Bright Teal Accent / CTA)
+* **On Primary Container (`text-on-primary-container`):** `#00332c`
+* **Primary Fixed (`bg-primary-fixed`):** `#7af7e1`
+* **On Primary Fixed (`text-on-primary-fixed`):** `#00201b`
+
+### Secondary Theme Colors (Slate Blue)
+
+* **Secondary (`bg-secondary` / `text-secondary`):** `#1e667f`
+* **On Secondary (`text-on-secondary`):** `#ffffff`
+* **Secondary Container (`bg-secondary-container`):** `#a1e0fd`
+* **On Secondary Container (`text-on-secondary-container`):** `#1c657e`
+
+### Text & Border Tokens
+
+* **Text Main (`text-on-surface` / `text-on-background`):** `#021f22` (Deep Dark Teal/Slate)
+* **Text Muted / Subtitle (`text-on-surface-variant`):** `#3c4946`
+* **Borders / Outlines (`border-outline`):** `#6c7a76`
+* **Subtle Borders (`border-outline-variant`):** `#bbcac5`
+
+---
+
+## 3. Navigation Bar Specifications
+
+### Left Floating Sidebar Navigation (`<aside>`)
+
+* **Background Color:** `#006b5e` (`bg-primary`)
+* **Dimensions:** `w-20` (80px wide), fixed position (`fixed left-4 top-4 bottom-4`)
+* **Border Radius:** `rounded-full`
+* **Shadow:** `shadow-[0_12px_32px_-4px_rgba(13,92,117,0.2)]`
+* **Active Navigation Item:**
+* Background: `bg-primary-container` (`#00a693`)
+* Text/Icon Color: `text-on-primary` (`#ffffff`)
+* Glow Shadow: `shadow-[0_0_16px_rgba(0,166,147,0.4)]`
+* Shape: `w-11 h-11 rounded-full`
+
+
+* **Inactive Item Hover:** `hover:bg-surface-container-lowest/15 hover:text-surface-bright`
+
+### Top Header Bar (`<header>`)
+
+* **Background Color:** `bg-surface/85` (`#eafdff` with 85% opacity) with `backdrop-blur-xl`
+* **Height & Position:** `h-20` (80px high), `fixed top-0 left-28 right-0 z-40`
+* **Shadow:** `shadow-[0_1px_8px_rgba(0,0,0,0.04)]`
+* **Content Padding Left:** Main content area uses `pl-28` to offset the floating sidebar and header space.
+
+---
+
+## 4. Components & Layout Standards
+
+### Radius & Spacing Defaults
+
+* **Card Border Radius:** `rounded-xl` (`0.75rem` / `12px`)
+* **Button Border Radius:** `rounded-full` (`9999px`)
+* **Gutter / Grid Gap:** `gap-gutter` (`1.5rem` / `24px`)
+* **Page Margin Padding:** `px-margin` (`2rem` / `32px`)
+
+### Standard Card Styling
+
+* **Base Workspace Card:**
+* Background: `bg-surface-container-lowest` (`#ffffff`)
+* Radius: `rounded-xl`
+* Padding: `p-6`
+* Shadow: `shadow-md`
+
+
+
+### Standard Buttons
+
+* **Primary Action CTA:** `bg-primary-container hover:bg-primary text-on-primary font-title-md rounded-full px-7 py-3.5 shadow-md`
+* **Secondary / Metric Button:** `bg-surface-container hover:bg-surface-container-high text-on-surface rounded-full px-4 py-2`
