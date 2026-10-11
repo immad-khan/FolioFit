@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Job Capture - Send jobs to my dashboard",
+  "version": "1.0.0",
+  "description": "Capture real job postings (title, company, salary, description) from LinkedIn, Indeed, Glassdoor and any job site tab, and send them to your dashboard instantly.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"]
+}

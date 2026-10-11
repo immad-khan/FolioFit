@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-slate-50: #f5feff;
+  --color-slate-100: #021f22;
+  --color-slate-200: #1c3435;
+  --color-slate-300: #3c4946;
+  --color-slate-400: #53635f;
+  --color-slate-500: #6c7a76;
+  --color-slate-600: #87958f;
+  --color-slate-700: #bbcac5;
+  --color-slate-800: #d0eef1;
+  --color-slate-900: #ffffff;
+  --color-slate-950: #eafdff;
+  --color-emerald-300: #7af7e1;
+  --color-emerald-400: #00a693;
+  --color-emerald-500: #006b5e;
+  --color-emerald-600: #00594f;
+  --color-emerald-950: #ffffff;
+  --color-sky-400: #1e667f;
+  --color-indigo-400: #1e667f;
+  --color-purple-400: #006b5e;
+  --color-rose-400: #a23f53;
+  --color-amber-400: #8a5b00;
+}
+
+:root {
+  color-scheme: light;
+  --background: #eafdff;
+  --foreground: #021f22;
+  --surface: #ffffff;
+  --surface-container: #d6f3f7;
+  --primary: #006b5e;
+  --primary-container: #00a693;
+  --outline: #bbcac5;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: #7af7e1;
+  color: #00201b;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 340px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+    }
+    h1 {
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: #f8fafc;
+    }
+    h1 .dot { width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block; }
+    label { font-size: 11px; color: #94a3b8; display: block; margin-bottom: 4px; }
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #e2e8f0;
+      font-size: 12px;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    input:focus { border-color: #10b981; }
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 8px;
+      transition: opacity .15s;
+    }
+    button:hover { opacity: .9; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    #captureBtn { background: #10b981; color: #052e1c; }
+    #captureAllBtn { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; }
+    #dashboardLink {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      color: #34d399;
+      text-decoration: none;
+      margin-top: 4px;
+    }
+    #status {
+      font-size: 12px;
+      line-height: 1.5;
+      padding: 8px 10px;
+      border-radius: 8px;
+      margin-top: 4px;
+      display: none;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    #status.ok { display: block; background: rgba(16,185,129,.12); color: #34d399; border: 1px solid rgba(16,185,129,.3); }
+    #status.err { display: block; background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.3); }
+    #status.info { display: block; background: rgba(59,130,246,.12); color: #60a5fa; border: 1px solid rgba(59,130,246,.3); }
+    .hint { font-size: 10px; color: #64748b; margin-bottom: 10px; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h1><span class="dot"></span> Job Capture</h1>
+
+  <label for="apiUrl">Dashboard API URL</label>
+  <input id="apiUrl" type="text" placeholder="https://your-app.example.com/api/jobs" />
+  <div class="hint">Copy this from the Setup page of your dashboard. It is saved automatically.</div>
+
+  <button id="captureBtn">⚡ Capture this job</button>
+  <button id="captureAllBtn">📋 Capture all jobs visible on page</button>
+
+  <div id="status"></div>
+  <a id="dashboardLink" href="#" target="_blank">Open dashboard →</a>
+
+  <script src="popup.js"></script>
+</body>
+</html>
