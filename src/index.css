@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Surfaces */
+  --color-background: #eafdff;
+  --color-surface: #eafdff;
+  --color-surface-bright: #eafdff;
+  --color-surface-dim: #c2dfe3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #dcf9fd;
+  --color-surface-container: #d6f3f7;
+  --color-surface-container-high: #d0eef1;
+  --color-surface-container-highest: #cbe8eb;
+
+  /* Primary */
+  --color-primary: #006b5e;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #00a693;
+  --color-on-primary-container: #00332c;
+  --color-primary-fixed: #7af7e1;
+  --color-on-primary-fixed: #00201b;
+
+  /* Secondary */
+  --color-secondary: #1e667f;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #a1e0fd;
+  --color-on-secondary-container: #1c657e;
+
+  /* Text & borders */
+  --color-on-surface: #021f22;
+  --color-on-background: #021f22;
+  --color-on-surface-variant: #3c4946;
+  --color-outline: #6c7a76;
+  --color-outline-variant: #bbcac5;
+  --color-error: #ba1a1a;
+
+  /* Spacing */
+  --spacing-gutter: 1.5rem;
+  --spacing-margin: 2rem;
+
+  /* Typography scale */
+  --text-display: 48px;
+  --text-display--line-height: 56px;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 700;
+
+  --text-metric-callout: 40px;
+  --text-metric-callout--line-height: 44px;
+  --text-metric-callout--letter-spacing: -0.03em;
+  --text-metric-callout--font-weight: 700;
+
+  --text-headline-lg: 36px;
+  --text-headline-lg--line-height: 44px;
+  --text-headline-lg--letter-spacing: -0.025em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--letter-spacing: -0.02em;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.02em;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--letter-spacing: -0.015em;
+  --text-headline-sm--font-weight: 600;
+
+  --text-title-md: 16px;
+  --text-title-md--line-height: 24px;
+  --text-title-md--letter-spacing: -0.01em;
+  --text-title-md--font-weight: 600;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--letter-spacing: 0em;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--letter-spacing: 0em;
+  --text-body-md--font-weight: 400;
+
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 16px;
+  --text-body-sm--letter-spacing: 0.01em;
+  --text-body-sm--font-weight: 400;
+
+  --text-label-md: 13px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: -0.01em;
+  --text-label-md--font-weight: 500;
+
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.02em;
+  --text-label-sm--font-weight: 500;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s ease-out both;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-on-background font-sans antialiased;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+}
+.material-symbols-outlined.filled {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.grid-dots {
+  background-image: radial-gradient(rgba(0, 107, 94, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Page level headers are replaced by the shared app navbar. */
+.app-page--scraper > div > header,
+.app-page--quiz > div > header,
+.app-page--interview > div > header,
+.app-page--skillbot > div > header,
+.app-page--dashboard > div > header,
+.app-page--portfolio .portfolio-page .hero > .nav {
+  display: none;
+}
