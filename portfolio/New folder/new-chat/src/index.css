@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #060608;
+  --color-panel: #0b0b10;
+  --color-accent: #c9f31d;
+  --color-violet-soft: #8b5cf6;
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+}
+
+/* ---------- base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-body);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #060608;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #060608;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 243, 29, 0.25);
+  border-radius: 999px;
+  border: 2px solid #060608;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 243, 29, 0.55);
+}
+
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  [data-hover] {
+    cursor: none;
+  }
+}
+
+/* ---------- film grain ---------- */
+.noise {
+  position: fixed;
+  inset: -50%;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- outlined display text ---------- */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+}
+.text-outline-accent {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-accent);
+}
+.text-outline-dim {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.28);
+}
+
+/* ---------- marquee ---------- */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee-x 26s linear infinite;
+}
+.marquee-track.fast {
+  animation-duration: 18s;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ---------- slow spins ---------- */
+@keyframes spin-slower {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slower {
+  animation: spin-slower 16s linear infinite;
+}
+.animate-spin-slowest {
+  animation: spin-slower 28s linear infinite;
+}
+
+/* ---------- soft float for decorations ---------- */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+.animate-float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+/* ---------- background grid ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
